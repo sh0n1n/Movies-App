@@ -2,8 +2,7 @@
 //  AppDelegate.swift
 //  Films
 //
-//  Created by Melkor on 2/22/24.
-//
+
 
 import UIKit
 

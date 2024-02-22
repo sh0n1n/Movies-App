@@ -1,13 +1,12 @@
 //
-//  ViewController.swift
+//  GeneralViewController.swift
 //  Films
 //
-//  Created by Melkor on 2/22/24.
-//
+
 
 import UIKit
 
-class ViewController: UIViewController {
+class GeneralViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
