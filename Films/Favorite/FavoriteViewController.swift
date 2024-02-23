@@ -5,3 +5,6 @@
 
 import UIKit
 
+final class FavoriteViewController: UIViewController {
+    
+}
