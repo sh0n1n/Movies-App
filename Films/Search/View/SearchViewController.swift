@@ -17,7 +17,7 @@ final class SearchViewController: UIViewController {
     private lazy var seachBar: UISearchBar = {
         let searchBar = UISearchBar()
         searchBar.translatesAutoresizingMaskIntoConstraints = false
-        searchBar.placeholder = "Search something"
+        searchBar.placeholder = "Search"
          return searchBar
      }()
     
