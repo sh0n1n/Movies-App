@@ -5,6 +5,7 @@
 
 import Foundation
 
+
 struct MovieTrailer: Codable {
     let id: Int?
     let results: [TrailerInfo]?
@@ -24,6 +25,6 @@ struct TrailerInfo: Codable {
         case iso3166_1 = "iso_3166_1"
         case name, key, site, size, type, official
         case publishedAt = "published_at"
-        case id
+        case id = ""
     }
 }

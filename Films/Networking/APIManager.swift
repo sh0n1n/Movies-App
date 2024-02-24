@@ -6,28 +6,19 @@
 
 import UIKit
 
-final class APIManager: MovieService {
-    
-    
-    
-    
+class APIManager: MovieService{
     func fetchTrendingMovies(completion: @escaping (Swift.Result<Movie, Error>) -> Void) {
-        
-        
         let headers = [
           "accept": "application/json",
           "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI4MjNmODIwZGY0Mzg4ZDk2M2ExOTU3OGUyNGU5ZmIwMiIsInN1YiI6IjY1YTlhYzM3YzQzM2VhMDBjZTc0NDUzOCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.iRpR_AkId9BrMYlrEyQ6bsxJ-wrCsU9r3_g9odDj8rY"
         ]
         
         let url = URL(string: "https://api.themoviedb.org/3/trending/movie/day")!
-       // --url 'https://api.themoviedb.org/3/search/movie?query=transformers1' \
-
         var request = URLRequest(url: url)
         
         
         request.httpMethod = "GET"
         request.allHTTPHeaderFields = headers
-        
         
         URLSession.shared.dataTask(with: request) { data, response, error in
             if let error = error{
@@ -39,13 +30,10 @@ final class APIManager: MovieService {
                 completion(.failure(unknownError))
                 return
             }
-            
-
                 do{
                     if let data = data{
                         let decoder = JSONDecoder()
                         let movie = try decoder.decode(Movie.self, from: data)
-                        
                         completion(.success(movie))
                     }else{
                         let parsingError = NSError(domain: "NoDataError", code: 0)
@@ -56,8 +44,6 @@ final class APIManager: MovieService {
                 }
  
         }.resume()
-        
-        
     }
     
     func fetchSearchMovie(searchString: String, completion: @escaping (Swift.Result<Movie, Error>) -> Void) {
@@ -85,13 +71,10 @@ final class APIManager: MovieService {
                 completion(.failure(unknownError))
                 return
             }
-            
-
                 do{
                     if let data = data{
                         let decoder = JSONDecoder()
                         let movie = try decoder.decode(Movie.self, from: data)
-                      
                         completion(.success(movie))
                     }else{
                         let parsingError = NSError(domain: "NoDataError", code: 0)
@@ -103,6 +86,7 @@ final class APIManager: MovieService {
  
         }.resume()
     }
+    
     
     func fetchSimilarMovies(movieID: Int, completion: @escaping (Swift.Result<Movie, Error>) -> Void) {
         let headers = [
@@ -131,6 +115,7 @@ final class APIManager: MovieService {
                 return
             }
             
+
                 do{
                     if let data = data{
                         let decoder = JSONDecoder()
@@ -146,7 +131,7 @@ final class APIManager: MovieService {
  
         }.resume()
     }
-    
+ 
     func fetchTopRatedMovies(completion: @escaping (Swift.Result<Movie, Error>) -> Void) {
         let headers = [
           "accept": "application/json",
@@ -174,6 +159,7 @@ final class APIManager: MovieService {
                 return
             }
             
+
                 do{
                     if let data = data{
                         let decoder = JSONDecoder()
@@ -189,10 +175,9 @@ final class APIManager: MovieService {
  
         }.resume()
     }
-    
+
     func fetchUpcomingMovies(completion: @escaping (Swift.Result<Movie, Error>) -> Void) {
        
-        
         let headers = [
           "accept": "application/json",
           "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI4MjNmODIwZGY0Mzg4ZDk2M2ExOTU3OGUyNGU5ZmIwMiIsInN1YiI6IjY1YTlhYzM3YzQzM2VhMDBjZTc0NDUzOCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.iRpR_AkId9BrMYlrEyQ6bsxJ-wrCsU9r3_g9odDj8rY"
@@ -235,7 +220,7 @@ final class APIManager: MovieService {
  
         }.resume()
     }
-
+    
     func fetchPopularMovies(completion: @escaping (Swift.Result<Movie, Error>) -> Void) {
         let headers = [
           "accept": "application/json",
@@ -271,11 +256,9 @@ final class APIManager: MovieService {
                 }
  
         }.resume()
-        
     }
-    
+
     func fetchSingleMovie(movieID: Int, completion: @escaping(Swift.Result<SingleMovie, Error>) -> Void){
-        
         let headers = [
           "accept": "application/json",
           "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI4MjNmODIwZGY0Mzg4ZDk2M2ExOTU3OGUyNGU5ZmIwMiIsInN1YiI6IjY1YTlhYzM3YzQzM2VhMDBjZTc0NDUzOCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.iRpR_AkId9BrMYlrEyQ6bsxJ-wrCsU9r3_g9odDj8rY"
@@ -284,7 +267,6 @@ final class APIManager: MovieService {
         let request = NSMutableURLRequest(url: NSURL(string: "https://api.themoviedb.org/3/movie/\(movieID)?language=en-US")! as URL,
                                                 cachePolicy: .useProtocolCachePolicy,
                                             timeoutInterval: 10.0)
-        
         
         request.httpMethod = "GET"
         request.allHTTPHeaderFields = headers
@@ -299,7 +281,6 @@ final class APIManager: MovieService {
                 completion(.failure(unknownError))
                 return
             }
-            
             
             do{
                 if let data = data{
@@ -318,6 +299,7 @@ final class APIManager: MovieService {
         }.resume()
 
     }
+    
     
     func fetchMovieCredit(movieID: Int, completion: @escaping(Swift.Result<MovieCredit, Error>) -> Void){
         
@@ -345,6 +327,7 @@ final class APIManager: MovieService {
                 return
             }
             
+            
             do{
                 if let data = data{
                     let decoder = JSONDecoder()
@@ -363,7 +346,10 @@ final class APIManager: MovieService {
 
     }
     
+    
     func fetchMovieTrailer(movieID: Int, completion: @escaping (Swift.Result<MovieTrailer, Error>) -> Void){
+        
+        
         
         let headers = [
           "accept": "application/json",
@@ -417,6 +403,7 @@ final class APIManager: MovieService {
 
         let request = URLRequest(url: imageURL)
   
+
         let session = URLSession.shared
         let dataTask = session.dataTask(with: request) { (data, response, error) in
             if let error = error {
@@ -434,5 +421,5 @@ final class APIManager: MovieService {
         }
 
         dataTask.resume()
-    }
+    }  
 }

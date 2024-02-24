@@ -10,7 +10,6 @@ import UIKit
         
         func fetchPopularMovies(completion: @escaping(Swift.Result<Movie, Error>) -> Void )
       
-        
         func fetchUpcomingMovies(completion: @escaping(Swift.Result<Movie, Error>) -> Void)
         
         func fetchTopRatedMovies(completion: @escaping(Swift.Result<Movie, Error>) -> Void)

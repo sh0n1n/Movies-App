@@ -3,8 +3,6 @@
 //  Films
 //
 
-import Foundation
-
 // MARK: - Movie
 struct MovieCredit: Codable {
     let id: Int?
@@ -35,3 +33,4 @@ struct Cast: Codable {
         case order, job
     }
 }
+

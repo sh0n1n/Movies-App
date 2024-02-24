@@ -6,8 +6,13 @@
 import UIKit
 import SDWebImage
 
+
+import UIKit
+import SDWebImage
+
+
 class MovieDetailViewController: UIViewController, SingleMovieViewModelOutput, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
-    
+
     func updateSimilarMovies(movie: Movie) {
         guard let movies = movie.results else{return}
         
@@ -16,7 +21,6 @@ class MovieDetailViewController: UIViewController, SingleMovieViewModelOutput, U
         DispatchQueue.main.async {
             
             self.collectionViewSimilarMovies.reloadData()
-            
         }
         
     }
@@ -32,8 +36,6 @@ class MovieDetailViewController: UIViewController, SingleMovieViewModelOutput, U
         default:
             return 0
         }
-        
-       
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -54,6 +56,7 @@ class MovieDetailViewController: UIViewController, SingleMovieViewModelOutput, U
             return UICollectionViewCell()
         }
     }
+    
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         switch collectionView{
@@ -90,10 +93,11 @@ class MovieDetailViewController: UIViewController, SingleMovieViewModelOutput, U
         
     }
     
+    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
         return UIEdgeInsets(top: 0, left: 18, bottom: 0, right: 18)
     }
-    
+
     var movieCast: [Cast] = []
     var characters: [Cast] = []
     var similarMovies: [Result] = []
@@ -108,10 +112,12 @@ class MovieDetailViewController: UIViewController, SingleMovieViewModelOutput, U
         }
     }
     
+    
     func updateMovieTrailer(movie: MovieTrailer) {
     }
-    
+
     private let viewModel: MovieViewModel
+
     var movieInfo: String = ""
     
     init(viewModel: MovieViewModel) {
@@ -126,12 +132,14 @@ class MovieDetailViewController: UIViewController, SingleMovieViewModelOutput, U
     }
     
     var movieID: Int = 1{
+        
         didSet{
             viewModel.fetchSingleMovie(movieID: movieID)
             viewModel.fetchMovieCredit(movieID: movieID)
             viewModel.fetchMovieTrailer(movieID: movieID)
             viewModel.fetchSimilarMovies(movieID: movieID)
         }
+        
     }
     
     let scrollView: UIScrollView = {
@@ -166,6 +174,7 @@ class MovieDetailViewController: UIViewController, SingleMovieViewModelOutput, U
         return collectionView
     }()
     
+    
     let collectionViewSimilarMovies: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .horizontal
@@ -174,10 +183,10 @@ class MovieDetailViewController: UIViewController, SingleMovieViewModelOutput, U
         collectionView.backgroundColor = .clear
         collectionView.showsHorizontalScrollIndicator = false
 
-    
         return collectionView
     }()
 
+    
     let backdropImage: UIImageView = {
         let imageview = UIImageView()
          imageview.translatesAutoresizingMaskIntoConstraints = false
@@ -193,7 +202,7 @@ class MovieDetailViewController: UIViewController, SingleMovieViewModelOutput, U
         imageview.clipsToBounds = true
         return imageview
     }()
-
+    
     let movieNameLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -203,8 +212,9 @@ class MovieDetailViewController: UIViewController, SingleMovieViewModelOutput, U
         label.textAlignment = .center
         return label
     }()
-
+ 
     let releaseDateLabel: UILabel = {
+
         let label = UILabel()
          label.translatesAutoresizingMaskIntoConstraints = false
          label.textColor = .lightGray
@@ -319,9 +329,9 @@ class MovieDetailViewController: UIViewController, SingleMovieViewModelOutput, U
         view.backgroundColor = .black
         
         view.addSubview(scrollView)
-   
+  
         scrollView.anchor(top: view.topAnchor, bottom: view.bottomAnchor, leading: view.leadingAnchor, trailing: view.trailingAnchor, paddingTop: 0, paddingBottom: 0, paddingLeft: 0, paddingRight: 0, width: 0, height: 0)
-
+            
         view.addSubview(backdropImage)
         view.addSubview(posterImage)
         view.addSubview(movieNameLabel)
@@ -343,7 +353,7 @@ class MovieDetailViewController: UIViewController, SingleMovieViewModelOutput, U
         imdbImage.anchor(top: sureLabel.bottomAnchor, bottom: nil, leading: sureLabel.leadingAnchor, trailing: nil, paddingTop: 10, paddingBottom: 0, paddingLeft: 0, paddingRight: 0, width: 50, height: 25)
         imdbLabel.anchor(top: nil, bottom: nil, leading: imdbImage.trailingAnchor, trailing: view.trailingAnchor, paddingTop: 0, paddingBottom: 0, paddingLeft: 10, paddingRight: 0, width: 0, height: 0)
         imdbLabel.centerYAnchor.constraint(equalTo: imdbImage.centerYAnchor).isActive = true
-        
+              
         collectionViewCast.register(CastCollectionViewCell.self, forCellWithReuseIdentifier: "cell")
         collectionViewSimilarMovies.register(RelatedMovieCollectionViewCell.self, forCellWithReuseIdentifier: "cell2")
 
@@ -361,10 +371,11 @@ class MovieDetailViewController: UIViewController, SingleMovieViewModelOutput, U
         collectionViewCast.delegate = self
         collectionViewSimilarMovies.dataSource = self
         collectionViewSimilarMovies.delegate = self
-    }
-
-    func updateSingleMovie(movie: SingleMovie) {
         
+    }
+  
+    func updateSingleMovie(movie: SingleMovie) {
+   
         guard let posterPath = movie.posterPath else{return}
         guard let backdropPath = movie.backdropPath else{return}
         guard let releaseDate = movie.releaseDate else{return}
@@ -396,16 +407,23 @@ class MovieDetailViewController: UIViewController, SingleMovieViewModelOutput, U
             print("Invalid Date Format")
         }
         
+        
+        
         var minutes: Int = runTime % 60
         var hours: Int = runTime / 60
         
         var playTime: String = "\(hours)h \(minutes)min · Movie HD"
+
         var genreAll: String = ""
+
         var number = 0
+        
         var genre2 = Array(genres.prefix(2))
+       
         for genre in genre2{
+ 
             guard let genreName = genre.name else{return}
-            
+
             if number != genre2.count - 1{
                 genreAll += "\(genreName), "
             }else{
@@ -413,6 +431,8 @@ class MovieDetailViewController: UIViewController, SingleMovieViewModelOutput, U
             }
             number += 1
         }
+        
+        
        
         movieInfo  = "\(releaseYear) · \(genreAll)"
         
@@ -423,19 +443,18 @@ class MovieDetailViewController: UIViewController, SingleMovieViewModelOutput, U
         paragraphStyle.lineSpacing = 5
 
         attributedString.addAttribute(NSAttributedString.Key.paragraphStyle, value:paragraphStyle, range:NSMakeRange(0, attributedString.length))
-        
+       
        DispatchQueue.main.async {
             self.releaseDateLabel.attributedText = attributedString
            self.sureLabel.text = playTime
            self.imdbLabel.text = "\(imdbPuanString)/10"
            self.summaryLabel.text = summary
            self.movieNameLabel.text = movie.originalTitle
-       }
-        
+        }
+
         if let imageURL = URL(string: "https://image.tmdb.org/t/p/w500\(posterPath)"){
             DispatchQueue.main.async {
                 self.posterImage.sd_setImage(with: imageURL)
-
             }
         }
         if let imageURL = URL(string: "https://image.tmdb.org/t/p/w500\(backdropPath)") {

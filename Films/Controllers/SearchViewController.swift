@@ -5,8 +5,10 @@
 
 import UIKit
 
+import UIKit
+
 class SearchViewController: UIViewController, UISearchBarDelegate, MovieSearchViewModelOutput {
-    
+
     let collectionViewSearch: UICollectionView = {
         
         let layout = UICollectionViewFlowLayout()
@@ -23,6 +25,8 @@ class SearchViewController: UIViewController, UISearchBarDelegate, MovieSearchVi
         DispatchQueue.main.async {
             self.collectionViewSearch.reloadData()
         }
+        
+        
     }
     
     let seachBar: UISearchBar = {
@@ -33,11 +37,14 @@ class SearchViewController: UIViewController, UISearchBarDelegate, MovieSearchVi
         return sb
     }()
     
+    
+    
     private let viewModel: MovieViewModel
     var searchedMovies: [Result] = []
     
     init(viewModel: MovieViewModel) {
 
+        
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
         self.viewModel.outputSearchMovie = self
@@ -48,6 +55,7 @@ class SearchViewController: UIViewController, UISearchBarDelegate, MovieSearchVi
         fatalError("init(coder:) has not been implemented")
     }
     
+    
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         viewModel.fetchSearchMovies(queryString: searchText)
     }
@@ -57,7 +65,7 @@ class SearchViewController: UIViewController, UISearchBarDelegate, MovieSearchVi
         seachBar.delegate = self
         setupCollectionView()
     }
-    
+
     func setupCollectionView(){
         collectionViewSearch.register(SearchCollectionViewCell.self, forCellWithReuseIdentifier: "cell")
         
@@ -71,14 +79,15 @@ class SearchViewController: UIViewController, UISearchBarDelegate, MovieSearchVi
         view.backgroundColor = .black
         view.addSubview(collectionViewSearch)
         collectionViewSearch.anchor(top: view.safeAreaLayoutGuide.topAnchor, bottom: view.bottomAnchor, leading: view.leadingAnchor, trailing: view.trailingAnchor, paddingTop: 10, paddingBottom: 0, paddingLeft: 10, paddingRight: -10, width: 0, height: 0)
-    }
+        }
 }
+
 
 extension SearchViewController:  UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout{
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as? SearchCollectionViewCell else{return UICollectionViewCell()}
         cell.searchMovie(movie: searchedMovies[indexPath.row])
-        
+
         return cell
     }
     
