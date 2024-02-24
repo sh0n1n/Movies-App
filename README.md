@@ -18,7 +18,7 @@ This application is designed to search for current news in the world of cinema a
 #### Frameworks
 - UIKit
 
-## Future Updates
+## Ideas for Future Updates
 1. Complete screen for favorite movies.
 2. Add function "Add to favorite"
 3. Make page for Cast Memeber
@@ -28,7 +28,10 @@ This application is designed to search for current news in the world of cinema a
 
 ## TODO
 1. Code Style
-2. Add Tests
+2. Do a play button for trailers working
+3. Make Tests
+4. Complete with VC for Favorite Movies and make this function working
+
 
 
 
