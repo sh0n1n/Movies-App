@@ -10,6 +10,7 @@ class TopRatedCollectionViewCell: UICollectionViewCell {
     var backGroundPath: String?{
         didSet{
             guard let backGroundPath = backGroundPath else{return}
+            
             if let imageURL = URL(string: "https://image.tmdb.org/t/p/w500\(backGroundPath)"){
                 DispatchQueue.main.async {
                     self.movieImage.sd_setImage(with: imageURL)
@@ -18,7 +19,6 @@ class TopRatedCollectionViewCell: UICollectionViewCell {
         }
     }
     
-    // MARK: - GUI VAriables
     let movieImage: UIImageView = {
         let image = UIImageView()
         image.translatesAutoresizingMaskIntoConstraints = false
@@ -35,21 +35,19 @@ class TopRatedCollectionViewCell: UICollectionViewCell {
         label.textAlignment = .center
         return label
     }()
-    
-    // MARK: - Life Cycle
+
     override init(frame: CGRect) {
         super.init(frame: frame)
         addSubview(movieImage)
-        movieImage.backgroundColor = .systemBackground
+        movieImage.backgroundColor = .lightGray
             
         movieImage.anchor(top: topAnchor, bottom: bottomAnchor, leading: leadingAnchor, trailing: trailingAnchor, paddingTop: 0, paddingBottom: 0, paddingLeft: 0, paddingRight: 0, width: 0, height: 0)
     }
-    
+
     required init?(coder: NSCoder) {
         fatalError()
     }
     
     func movieOylesine(movie: Result){
-      //  print(movie)
     }
 }

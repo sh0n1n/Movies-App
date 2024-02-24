@@ -17,7 +17,6 @@ class RelatedMovieCollectionViewCell: UICollectionViewCell {
         }
     }
     
-    //MARK: - GUI VAriables
     let movieImage: UIImageView = {
         let image = UIImageView()
         image.translatesAutoresizingMaskIntoConstraints = false
@@ -36,14 +35,15 @@ class RelatedMovieCollectionViewCell: UICollectionViewCell {
         return label
     }()
 
-    //MARK: - Life Cycle
     override init(frame: CGRect) {
         super.init(frame: frame)
         addSubview(movieImage)
-            
+
         movieImage.anchor(top: topAnchor, bottom: bottomAnchor, leading: leadingAnchor, trailing: trailingAnchor, paddingTop: 0, paddingBottom: 0, paddingLeft: 0, paddingRight: 0, width: 0, height: 0)
     }
+
     required init?(coder: NSCoder) {
         fatalError()
     }
 }
+

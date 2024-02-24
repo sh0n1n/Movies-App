@@ -6,6 +6,7 @@
 import UIKit
 
 class CastCollectionViewCell: UICollectionViewCell {
+    
     var backGroundPath: String?{
         didSet{
             guard let backGroundPath = backGroundPath else{return}
@@ -17,19 +18,20 @@ class CastCollectionViewCell: UICollectionViewCell {
         }
     }
     
-    //MARK: - GUI Variables
+
     let characterImage: UIImageView = {
         let image = UIImageView()
         image.translatesAutoresizingMaskIntoConstraints = false
         image.layer.cornerRadius = 10
         image.clipsToBounds = true
-        image.backgroundColor = .systemBackground
+        image.backgroundColor = .lightGray
         image.layer.borderColor = UIColor.white.cgColor
         image.layer.borderWidth = 0.3
         return image
     }()
     
-     let characterLabel: UILabel = {
+    
+    let characterLabel: UILabel = {
        let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = .systemFont(ofSize: 12.5)
@@ -39,7 +41,6 @@ class CastCollectionViewCell: UICollectionViewCell {
         return label
     }()
     
-    // MARK: - Life Cycle
     override init(frame: CGRect) {
         super.init(frame: frame)
         addSubview(characterImage)
@@ -53,3 +54,4 @@ class CastCollectionViewCell: UICollectionViewCell {
         fatalError()
     }
 }
+

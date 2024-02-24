@@ -6,6 +6,7 @@
 import UIKit
 
 class SearchCollectionViewCell: UICollectionViewCell {
+    
     var backGroundPath: String?{
         didSet{
             guard let backGroundPath = backGroundPath else{return}
@@ -16,8 +17,7 @@ class SearchCollectionViewCell: UICollectionViewCell {
             }
         }
     }
-    
-    //MARK: - GUI Variables
+
     let movieImage: UIImageView = {
         let image = UIImageView()
         image.translatesAutoresizingMaskIntoConstraints = false
@@ -43,8 +43,7 @@ class SearchCollectionViewCell: UICollectionViewCell {
         label.textAlignment = .left
         return label
     }()
-
-    //MARK: - Life Cycle
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         addSubview(movieImage)
@@ -61,13 +60,10 @@ class SearchCollectionViewCell: UICollectionViewCell {
         fatalError()
     }
     
-    //MARK: - Methods
     func searchMovie(movie: Result){
         
         backGroundPath = movie.posterPath
         movieNameLabel.text = movie.originalTitle
         movieDateLabel.text = movie.releaseDate
-        
     }
 }
-
