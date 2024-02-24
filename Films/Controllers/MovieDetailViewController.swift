@@ -268,7 +268,7 @@ class MovieDetailViewController: UIViewController, SingleMovieViewModelOutput, U
         imdbImage.translatesAutoresizingMaskIntoConstraints = false
         imdbImage.layer.cornerRadius = 10
         imdbImage.clipsToBounds = true
-         return imdbImage
+        return imdbImage
     }()
     
     let imdbLabel: UILabel = {
