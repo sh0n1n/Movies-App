@@ -27,5 +27,4 @@ protocol SingleMovieViewModelOutput: AnyObject{
     func updateMovieCredit(movie: MovieCredit)
     func updateMovieTrailer(movie: MovieTrailer)
     func updateSimilarMovies(movie: Movie)
-    
 }
