@@ -12,8 +12,8 @@ This application is designed to search for current news in the world of cinema a
 ### Dependencies
 | Library | Description |
 |---|---|
-|[SDWebImage]([(https://github.com/SDWebImage/SDWebImage)]) | This library provides an async image downloader with cache support.|
-|[SnapKit]([(https://github.com/SDWebImage/SDWebImage)]](https://github.com/SnapKit/SnapKit)]) | SnapKit is a DSL allows building constraints with minimal amounts of code while ensuring they are easy to read and understand.|
+|[SDWebImage](https://github.com/SDWebImage/SDWebImage) | This library provides an async image downloader with cache support.|
+|[SnapKit](https://github.com/SnapKit/SnapKit) | SnapKit is a DSL allows building constraints with minimal amounts of code while ensuring they are easy to read and understand.|
 
 #### Frameworks
 - UIKit
