@@ -10,32 +10,14 @@ final class TabBarController: UITabBarController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        let movieService: MovieService = APIManager()
+        let viewModel = MovieViewModel(movieService: movieService)
+
         
-        view.tintColor = .systemGray4
-        setupViewContollers()
-    }
-    
-    private func setupViewContollers() {
-        
-        viewControllers = [
-            setupNavigationController(rootViewController: GeneralViewController(), title: "Home", image: UIImage(systemName: "house.fill") ?? UIImage.add),
-            setupNavigationController(rootViewController: GeneralViewController(), title: "Search", image: UIImage(systemName: "magnifyingglass") ?? UIImage.add),
-            setupNavigationController(rootViewController: GeneralViewController(), title: "Favorite", image: UIImage(systemName: "heart.fill") ?? UIImage.add),
-            ]
-    }
-    
-    private func setupNavigationController(rootViewController: UIViewController,
-                                           title: String,
-                                           image: UIImage) -> UINavigationController {
-        
-        let navigationController = UINavigationController(rootViewController:
-                                                            rootViewController)
-        
-        navigationController.tabBarItem.title = title
-        navigationController.tabBarItem.image = image
-        rootViewController.navigationItem.title = title
-        navigationController.navigationBar.prefersLargeTitles = true
-        
-        return navigationController
+        let searchVC = SearchViewController(viewModel: viewModel)
+            searchVC.tabBarItem = UITabBarItem(title: "Search", image: UIImage(systemName: "magnifyingglass"), tag: 1)
+        self.viewControllers = [searchVC]
+
+        }
     }
 }
