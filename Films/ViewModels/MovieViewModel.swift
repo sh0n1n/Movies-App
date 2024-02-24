@@ -111,7 +111,6 @@ class MovieViewModel{
                     self.outputSingleMovie?.updateSingleMovie(movie: singleMovie)
                     
                 case .failure(let error):
-                    print("aaaaaaa")
                     print(error)
                 }
             }
