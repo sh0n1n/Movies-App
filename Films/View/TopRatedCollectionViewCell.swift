@@ -48,4 +48,10 @@ class TopRatedCollectionViewCell: UICollectionViewCell {
     required init?(coder: NSCoder) {
         fatalError()
     }
+    
+    func movieOylesine(movie: Result){
+        
+      //  print(movie)
+        
+    }
 }

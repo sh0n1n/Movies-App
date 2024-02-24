@@ -33,6 +33,8 @@
 		8DC0F0C12B89A09C00E29FB2 /* CastCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DC0F0C02B89A09C00E29FB2 /* CastCollectionViewCell.swift */; };
 		8DC0F0C32B89A17500E29FB2 /* RelatedMovieCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DC0F0C22B89A17500E29FB2 /* RelatedMovieCollectionViewCell.swift */; };
 		8DC0F0C52B89A1E000E29FB2 /* SearchCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DC0F0C42B89A1E000E29FB2 /* SearchCollectionViewCell.swift */; };
+		8DC0F0C82B89A3A600E29FB2 /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = 8DC0F0C72B89A3A600E29FB2 /* SDWebImage */; };
+		8DC0F0CA2B89A3A600E29FB2 /* SDWebImageMapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 8DC0F0C92B89A3A600E29FB2 /* SDWebImageMapKit */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -71,6 +73,8 @@
 				8DC0F08E2B87ECDE00E29FB2 /* SnapKit in Frameworks */,
 				8DC0F0BD2B899F7600E29FB2 /* SDWebImageMapKit in Frameworks */,
 				8DC0F0902B87ECDE00E29FB2 /* SnapKit-Dynamic in Frameworks */,
+				8DC0F0CA2B89A3A600E29FB2 /* SDWebImageMapKit in Frameworks */,
+				8DC0F0C82B89A3A600E29FB2 /* SDWebImage in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -240,6 +244,8 @@
 				8DC0F08F2B87ECDE00E29FB2 /* SnapKit-Dynamic */,
 				8DC0F0BA2B899F7600E29FB2 /* SDWebImage */,
 				8DC0F0BC2B899F7600E29FB2 /* SDWebImageMapKit */,
+				8DC0F0C72B89A3A600E29FB2 /* SDWebImage */,
+				8DC0F0C92B89A3A600E29FB2 /* SDWebImageMapKit */,
 			);
 			productName = Films;
 			productReference = 8DC0F0752B87EC7D00E29FB2 /* Films.app */;
@@ -566,6 +572,16 @@
 			productName = SDWebImage;
 		};
 		8DC0F0BC2B899F7600E29FB2 /* SDWebImageMapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8DC0F0B92B899F7600E29FB2 /* XCRemoteSwiftPackageReference "SDWebImage" */;
+			productName = SDWebImageMapKit;
+		};
+		8DC0F0C72B89A3A600E29FB2 /* SDWebImage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8DC0F0B92B899F7600E29FB2 /* XCRemoteSwiftPackageReference "SDWebImage" */;
+			productName = SDWebImage;
+		};
+		8DC0F0C92B89A3A600E29FB2 /* SDWebImageMapKit */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 8DC0F0B92B899F7600E29FB2 /* XCRemoteSwiftPackageReference "SDWebImage" */;
 			productName = SDWebImageMapKit;
