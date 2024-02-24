@@ -26,7 +26,7 @@ class APIManager: MovieService{
             }
             
             guard response is HTTPURLResponse else{
-                let unknownError = NSError(domain: "UnknownError", code: 0, userInfo: nil)
+                let unknownError = NSError(domain: "Unknown Error", code: 0, userInfo: nil)
                 completion(.failure(unknownError))
                 return
             }
@@ -36,7 +36,7 @@ class APIManager: MovieService{
                         let movie = try decoder.decode(Movie.self, from: data)
                         completion(.success(movie))
                     }else{
-                        let parsingError = NSError(domain: "NoDataError", code: 0)
+                        let parsingError = NSError(domain: "No Data Error", code: 0)
                         completion(.failure(parsingError))
                     }
                 }catch{
@@ -67,7 +67,7 @@ class APIManager: MovieService{
             }
             
             guard response is HTTPURLResponse else{
-                let unknownError = NSError(domain: "UnknownError", code: 0, userInfo: nil)
+                let unknownError = NSError(domain: "Unknown Error", code: 0, userInfo: nil)
                 completion(.failure(unknownError))
                 return
             }
@@ -77,7 +77,7 @@ class APIManager: MovieService{
                         let movie = try decoder.decode(Movie.self, from: data)
                         completion(.success(movie))
                     }else{
-                        let parsingError = NSError(domain: "NoDataError", code: 0)
+                        let parsingError = NSError(domain: "No Data Error", code: 0)
                         completion(.failure(parsingError))
                     }
                 }catch{
@@ -110,7 +110,7 @@ class APIManager: MovieService{
             }
             
             guard response is HTTPURLResponse else{
-                let unknownError = NSError(domain: "UnknownError", code: 0, userInfo: nil)
+                let unknownError = NSError(domain: "Unknown Error", code: 0, userInfo: nil)
                 completion(.failure(unknownError))
                 return
             }
@@ -122,7 +122,7 @@ class APIManager: MovieService{
                         let movie = try decoder.decode(Movie.self, from: data)
                         completion(.success(movie))
                     }else{
-                        let parsingError = NSError(domain: "NoDataError", code: 0)
+                        let parsingError = NSError(domain: "No Data Error", code: 0)
                         completion(.failure(parsingError))
                     }
                 }catch{
@@ -154,7 +154,7 @@ class APIManager: MovieService{
             }
             
             guard response is HTTPURLResponse else{
-                let unknownError = NSError(domain: "UnknownError", code: 0, userInfo: nil)
+                let unknownError = NSError(domain: "Unknown Error", code: 0, userInfo: nil)
                 completion(.failure(unknownError))
                 return
             }
@@ -166,7 +166,7 @@ class APIManager: MovieService{
                         let movie = try decoder.decode(Movie.self, from: data)
                         completion(.success(movie))
                     }else{
-                        let parsingError = NSError(domain: "NoDataError", code: 0)
+                        let parsingError = NSError(domain: "No Data Error", code: 0)
                         completion(.failure(parsingError))
                     }
                 }catch{
@@ -199,7 +199,7 @@ class APIManager: MovieService{
             }
             
             guard response is HTTPURLResponse else{
-                let unknownError = NSError(domain: "UnknownError", code: 0, userInfo: nil)
+                let unknownError = NSError(domain: "Unknown Error", code: 0, userInfo: nil)
                 completion(.failure(unknownError))
                 return
             }
@@ -211,7 +211,7 @@ class APIManager: MovieService{
                         let movie = try decoder.decode(Movie.self, from: data)
                         completion(.success(movie))
                     }else{
-                        let parsingError = NSError(domain: "NoDataError", code: 0)
+                        let parsingError = NSError(domain: "No Data Error", code: 0)
                         completion(.failure(parsingError))
                     }
                 }catch{
@@ -248,7 +248,7 @@ class APIManager: MovieService{
                         guard movie.results != nil else{return}
                         completion(.success(movie))
                     }else{
-                        let parsingError = NSError(domain: "NoDataError", code: 0)
+                        let parsingError = NSError(domain: "No Data Error", code: 0)
                         completion(.failure(parsingError))
                     }
                 }catch{
@@ -277,7 +277,7 @@ class APIManager: MovieService{
             }
             
             guard response is HTTPURLResponse else{
-                let unknownError = NSError(domain: "UnknownError", code: 0, userInfo: nil)
+                let unknownError = NSError(domain: "Unknown Error", code: 0, userInfo: nil)
                 completion(.failure(unknownError))
                 return
             }
@@ -289,7 +289,7 @@ class APIManager: MovieService{
                  
                     completion(.success(singleMovie))
                 }else{
-                    let parsingError = NSError(domain: "NoDataError", code: 0)
+                    let parsingError = NSError(domain: "No Data Error", code: 0)
                     completion(.failure(parsingError))
                 }
             }catch{
@@ -322,7 +322,7 @@ class APIManager: MovieService{
             }
             
             guard response is HTTPURLResponse else{
-                let unknownError = NSError(domain: "UnknownError", code: 0, userInfo: nil)
+                let unknownError = NSError(domain: "Unknown Error", code: 0, userInfo: nil)
                 completion(.failure(unknownError))
                 return
             }
@@ -335,7 +335,7 @@ class APIManager: MovieService{
                  
                     completion(.success(singleMovie))
                 }else{
-                    let parsingError = NSError(domain: "NoDataError", code: 0)
+                    let parsingError = NSError(domain: "No Data Error", code: 0)
                     completion(.failure(parsingError))
                 }
             }catch{
@@ -383,7 +383,7 @@ class APIManager: MovieService{
                  
                     completion(.success(singleMovie))
                 }else{
-                    let parsingError = NSError(domain: "NoDataError", code: 0)
+                    let parsingError = NSError(domain: "No Data Error", code: 0)
                     completion(.failure(parsingError))
                 }
             }catch{
@@ -397,7 +397,7 @@ class APIManager: MovieService{
         let imageURLString = "https://image.tmdb.org/t/p/original\(backDropPath)"
 
         guard let imageURL = URL(string: imageURLString) else {
-            completion(.failure(NSError(domain: "InvalidURL", code: 0, userInfo: nil)))
+            completion(.failure(NSError(domain: "Invalid URL", code: 0, userInfo: nil)))
             return
         }
 
@@ -412,7 +412,7 @@ class APIManager: MovieService{
             }
             
             guard let data = data else {
-                completion(.failure(NSError(domain: "ImageDownloadError", code: 0, userInfo: nil)))
+                completion(.failure(NSError(domain: "Image Download Error", code: 0, userInfo: nil)))
                 return
             }
             
