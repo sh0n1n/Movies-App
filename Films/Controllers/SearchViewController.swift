@@ -33,7 +33,7 @@ class SearchViewController: UIViewController, UISearchBarDelegate, MovieSearchVi
         
        let sb = UISearchBar()
         sb.translatesAutoresizingMaskIntoConstraints = false
-        sb.placeholder = "Search something"
+        sb.placeholder = "Search"
         return sb
     }()
     

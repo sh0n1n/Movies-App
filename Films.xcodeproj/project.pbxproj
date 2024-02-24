@@ -82,8 +82,8 @@
 		8D3FA9692B89D3CE004B0036 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				8DC0F09A2B8834E600E29FB2 /* MovieDetailViewController.swift */,
 				8DC0F0912B87ED2900E29FB2 /* TabBarController.swift */,
+				8DC0F09A2B8834E600E29FB2 /* MovieDetailViewController.swift */,
 				8D3FA9632B89C991004B0036 /* HomeViewController.swift */,
 				8DC0F0942B87F12900E29FB2 /* SearchViewController.swift */,
 				8DC0F0962B87F14200E29FB2 /* FavoriteViewController.swift */,
