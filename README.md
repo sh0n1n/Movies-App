@@ -22,9 +22,13 @@ This application is designed to search for current news in the world of cinema a
 1. Complete screen for favorite movies.
 2. Add function "Add to favorite"
 3. Make page for Cast Memeber
-4. Remake a design for Movoe Info.
+4. Remake a design for Movie Info.
 5. Make a playable trailers
-6. Make app show not only movies but series too
+6. Make app show not only movies but series too.
+
+## TODO
+1. Code Style
+2. Add Tests
 
 
 
