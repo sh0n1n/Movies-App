@@ -117,7 +117,6 @@ final class MovieViewModel{
     }
     
     func fetchMovieTrailer(movieID: Int){
-     
         movieService.fetchMovieTrailer(movieID: movieID) { result in
             switch result{
             case .success(let movieTrailer):
