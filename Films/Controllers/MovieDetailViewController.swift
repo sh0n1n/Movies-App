@@ -6,11 +6,6 @@
 import UIKit
 import SDWebImage
 
-
-import UIKit
-import SDWebImage
-
-
 class MovieDetailViewController: UIViewController, SingleMovieViewModelOutput, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
 
     func updateSimilarMovies(movie: Movie) {
