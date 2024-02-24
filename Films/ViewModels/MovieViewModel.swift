@@ -89,8 +89,6 @@ class MovieViewModel{
     
     
     func fetchMovie(){
-        
-        
         movieService.fetchPopularMovies { result in
             switch result{
             case .success(let movie):
@@ -151,6 +149,4 @@ class MovieViewModel{
         }
         
     }
-    
-    
 }
