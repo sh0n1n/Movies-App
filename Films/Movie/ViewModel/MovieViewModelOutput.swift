@@ -11,13 +11,10 @@ protocol MovieViewModelOutput: AnyObject{
     func updateUpcomingMovie(movie: Movie)
     func updateMovieTopRated(movie: Movie)
     func updateTrending(movie: Movie)
-
 }
 
 protocol MovieSearchViewModelOutput: AnyObject{
     func updateSearchMovie(movie: Movie)
-    
-
 }
 
 
