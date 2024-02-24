@@ -30,7 +30,7 @@ class CastCollectionViewCell: UICollectionViewCell {
     }()
     
     
-    private lazy var characterLabel: UILabel = {
+     lazy var characterLabel: UILabel = {
        let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = .systemFont(ofSize: 12.5)
