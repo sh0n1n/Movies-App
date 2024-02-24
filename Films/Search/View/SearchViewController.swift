@@ -5,44 +5,16 @@
 
 import UIKit
 
-final class SearchViewController: UIViewController, UISearchBarDelegate, MovieSearchViewModelOutput {
-    //MARK: - GUI Variables
-    private lazy var collectionViewSearch: UICollectionView = {
+class SearchViewController: UIViewController, UISearchBarDelegate, MovieSearchViewModelOutput {
+    
+    let collectionViewSearch: UICollectionView = {
+        
         let layout = UICollectionViewFlowLayout()
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
         collectionView.translatesAutoresizingMaskIntoConstraints = false
         return collectionView
     }()
     
-    private lazy var seachBar: UISearchBar = {
-        let searchBar = UISearchBar()
-        searchBar.translatesAutoresizingMaskIntoConstraints = false
-        searchBar.placeholder = "Search"
-        return searchBar
-    }()
-    
-    // MARK: - Properties
-    private let viewModel: MovieViewModel
-    var searchedMovies: [Result] = []
-    
-    //MARK: - Life Cycle
-    init(viewModel: MovieViewModel) {
-        self.viewModel = viewModel
-        super.init(nibName: nil, bundle: nil)
-        self.viewModel.outputSearchMovie = self
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        seachBar.delegate = self
-        setupCollectionView()
-    }
-    
-    // MARK: - Methods
     func updateSearchMovie(movie: Movie) {
         guard let movie = movie.results else {return}
         
@@ -53,8 +25,37 @@ final class SearchViewController: UIViewController, UISearchBarDelegate, MovieSe
         }
     }
     
+    let seachBar: UISearchBar = {
+        
+       let sb = UISearchBar()
+        sb.translatesAutoresizingMaskIntoConstraints = false
+        sb.placeholder = "Search something"
+        return sb
+    }()
+    
+    private let viewModel: MovieViewModel
+    var searchedMovies: [Result] = []
+    
+    init(viewModel: MovieViewModel) {
+
+        self.viewModel = viewModel
+        super.init(nibName: nil, bundle: nil)
+        self.viewModel.outputSearchMovie = self
+        
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         viewModel.fetchSearchMovies(queryString: searchText)
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        seachBar.delegate = self
+        setupCollectionView()
     }
     
     func setupCollectionView(){
@@ -72,14 +73,11 @@ final class SearchViewController: UIViewController, UISearchBarDelegate, MovieSe
         collectionViewSearch.anchor(top: view.safeAreaLayoutGuide.topAnchor, bottom: view.bottomAnchor, leading: view.leadingAnchor, trailing: view.trailingAnchor, paddingTop: 10, paddingBottom: 0, paddingLeft: 10, paddingRight: -10, width: 0, height: 0)
     }
 }
-    
-    //MARK: - Extensions
+
 extension SearchViewController:  UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout{
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as? SearchCollectionViewCell else{return UICollectionViewCell()}
         cell.searchMovie(movie: searchedMovies[indexPath.row])
-        
-        
         
         return cell
     }
@@ -101,9 +99,4 @@ extension SearchViewController:  UICollectionViewDelegate, UICollectionViewDataS
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
         return UIEdgeInsets(top: 5, left: 5, bottom: 5, right: 5)
     }
-    
-    
-    
-    
 }
-
