@@ -28,9 +28,10 @@ This application is designed to search for current news in the world of cinema a
 
 ## TODO
 1. Code Style
-2. Do a play button for trailers working
-3. Make Tests
-4. Complete with VC for Favorite Movies and make this function working
+2. Fix IMDB image showing
+3. Do a play button for trailers working
+4. Make Tests
+5. Complete with VC for Favorite Movies and make this function working
 
 
 
