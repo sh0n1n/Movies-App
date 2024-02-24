@@ -236,7 +236,7 @@ class APIManager: MovieService{
             }
             
             guard response is HTTPURLResponse else{
-                let unknownError = NSError(domain: "UnknownError", code: 0, userInfo: nil)
+                let unknownError = NSError(domain: "Unknown Error", code: 0, userInfo: nil)
                 completion(.failure(unknownError))
                 return
             }

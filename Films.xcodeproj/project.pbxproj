@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		8D3FA9642B89C991004B0036 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D3FA9632B89C991004B0036 /* HomeViewController.swift */; };
 		8D3FA9682B89CEF8004B0036 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D3FA9672B89CEF8004B0036 /* SceneDelegate.swift */; };
+		8D53057E2B8A7DAA004C6E19 /* Assets.xcassets in Sources */ = {isa = PBXBuildFile; fileRef = 8DC0F0812B87EC7E00E29FB2 /* Assets.xcassets */; };
 		8DC0F0792B87EC7D00E29FB2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DC0F0782B87EC7D00E29FB2 /* AppDelegate.swift */; };
 		8DC0F08E2B87ECDE00E29FB2 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 8DC0F08D2B87ECDE00E29FB2 /* SnapKit */; };
 		8DC0F0902B87ECDE00E29FB2 /* SnapKit-Dynamic in Frameworks */ = {isa = PBXBuildFile; productRef = 8DC0F08F2B87ECDE00E29FB2 /* SnapKit-Dynamic */; };
@@ -253,6 +254,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8D53057E2B8A7DAA004C6E19 /* Assets.xcassets in Sources */,
 				8DC0F0922B87ED2900E29FB2 /* TabBarController.swift in Sources */,
 				8DC0F0A52B883B9B00E29FB2 /* SingleMovie.swift in Sources */,
 				8D3FA9642B89C991004B0036 /* HomeViewController.swift in Sources */,
