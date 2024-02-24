@@ -6,7 +6,7 @@
 
 import UIKit
 
-final class APIManager: Service{
+final class APIManager: MovieService {
     
     
     
@@ -16,7 +16,7 @@ final class APIManager: Service{
         
         let headers = [
           "accept": "application/json",
-          "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI5MGQyN2YxOWRhZTcwZWNmNjZmZWFiODdkNDgxMTQ3NCIsInN1YiI6IjYzZGNmMGZhY2QyMDQ2MDBjMzBhMDFhNiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ._AyEn12c_-5RtWvgaGyXz59iuthPHeKsu2CUcK8aaic"
+          "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI4MjNmODIwZGY0Mzg4ZDk2M2ExOTU3OGUyNGU5ZmIwMiIsInN1YiI6IjY1YTlhYzM3YzQzM2VhMDBjZTc0NDUzOCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.iRpR_AkId9BrMYlrEyQ6bsxJ-wrCsU9r3_g9odDj8rY"
         ]
         
         let url = URL(string: "https://api.themoviedb.org/3/trending/movie/day")!
@@ -63,7 +63,7 @@ final class APIManager: Service{
     func fetchSearchMovie(searchString: String, completion: @escaping (Swift.Result<Movie, Error>) -> Void) {
         let headers = [
           "accept": "application/json",
-          "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI5MGQyN2YxOWRhZTcwZWNmNjZmZWFiODdkNDgxMTQ3NCIsInN1YiI6IjYzZGNmMGZhY2QyMDQ2MDBjMzBhMDFhNiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ._AyEn12c_-5RtWvgaGyXz59iuthPHeKsu2CUcK8aaic"
+          "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI4MjNmODIwZGY0Mzg4ZDk2M2ExOTU3OGUyNGU5ZmIwMiIsInN1YiI6IjY1YTlhYzM3YzQzM2VhMDBjZTc0NDUzOCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.iRpR_AkId9BrMYlrEyQ6bsxJ-wrCsU9r3_g9odDj8rY"
         ]
         
         let url = URL(string: "https://api.themoviedb.org/3/search/movie?query=\(searchString)")!
@@ -108,7 +108,7 @@ final class APIManager: Service{
     func fetchSimilarMovies(movieID: Int, completion: @escaping (Swift.Result<Movie, Error>) -> Void) {
         let headers = [
           "accept": "application/json",
-          "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI5MGQyN2YxOWRhZTcwZWNmNjZmZWFiODdkNDgxMTQ3NCIsInN1YiI6IjYzZGNmMGZhY2QyMDQ2MDBjMzBhMDFhNiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ._AyEn12c_-5RtWvgaGyXz59iuthPHeKsu2CUcK8aaic"
+          "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI4MjNmODIwZGY0Mzg4ZDk2M2ExOTU3OGUyNGU5ZmIwMiIsInN1YiI6IjY1YTlhYzM3YzQzM2VhMDBjZTc0NDUzOCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.iRpR_AkId9BrMYlrEyQ6bsxJ-wrCsU9r3_g9odDj8rY"
         ]
         
         let url = URL(string: "https://api.themoviedb.org/3/movie/\(movieID)/similar")!
@@ -151,7 +151,7 @@ final class APIManager: Service{
     func fetchTopRatedMovies(completion: @escaping (Swift.Result<Movie, Error>) -> Void) {
         let headers = [
           "accept": "application/json",
-          "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI5MGQyN2YxOWRhZTcwZWNmNjZmZWFiODdkNDgxMTQ3NCIsInN1YiI6IjYzZGNmMGZhY2QyMDQ2MDBjMzBhMDFhNiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ._AyEn12c_-5RtWvgaGyXz59iuthPHeKsu2CUcK8aaic"
+          "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI4MjNmODIwZGY0Mzg4ZDk2M2ExOTU3OGUyNGU5ZmIwMiIsInN1YiI6IjY1YTlhYzM3YzQzM2VhMDBjZTc0NDUzOCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.iRpR_AkId9BrMYlrEyQ6bsxJ-wrCsU9r3_g9odDj8rY"
         ]
         
         let url = URL(string: "https://api.themoviedb.org/3/movie/top_rated")!
@@ -196,7 +196,7 @@ final class APIManager: Service{
         
         let headers = [
           "accept": "application/json",
-          "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI5MGQyN2YxOWRhZTcwZWNmNjZmZWFiODdkNDgxMTQ3NCIsInN1YiI6IjYzZGNmMGZhY2QyMDQ2MDBjMzBhMDFhNiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ._AyEn12c_-5RtWvgaGyXz59iuthPHeKsu2CUcK8aaic"
+          "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI4MjNmODIwZGY0Mzg4ZDk2M2ExOTU3OGUyNGU5ZmIwMiIsInN1YiI6IjY1YTlhYzM3YzQzM2VhMDBjZTc0NDUzOCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.iRpR_AkId9BrMYlrEyQ6bsxJ-wrCsU9r3_g9odDj8rY"
         ]
         
         let url = URL(string: "https://api.themoviedb.org/3/movie/upcoming")!
@@ -240,7 +240,7 @@ final class APIManager: Service{
     func fetchPopularMovies(completion: @escaping (Swift.Result<Movie, Error>) -> Void) {
         let headers = [
           "accept": "application/json",
-          "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI5MGQyN2YxOWRhZTcwZWNmNjZmZWFiODdkNDgxMTQ3NCIsInN1YiI6IjYzZGNmMGZhY2QyMDQ2MDBjMzBhMDFhNiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ._AyEn12c_-5RtWvgaGyXz59iuthPHeKsu2CUcK8aaic"
+          "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI4MjNmODIwZGY0Mzg4ZDk2M2ExOTU3OGUyNGU5ZmIwMiIsInN1YiI6IjY1YTlhYzM3YzQzM2VhMDBjZTc0NDUzOCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.iRpR_AkId9BrMYlrEyQ6bsxJ-wrCsU9r3_g9odDj8rY"
         ]
 
             let url = URL(string: "https://api.themoviedb.org/3/movie/popular?api_key=90d27f19dae70ecf66feab87d4811474")!
@@ -279,7 +279,7 @@ final class APIManager: Service{
         
         let headers = [
           "accept": "application/json",
-          "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI5MGQyN2YxOWRhZTcwZWNmNjZmZWFiODdkNDgxMTQ3NCIsInN1YiI6IjYzZGNmMGZhY2QyMDQ2MDBjMzBhMDFhNiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ._AyEn12c_-5RtWvgaGyXz59iuthPHeKsu2CUcK8aaic"
+          "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI4MjNmODIwZGY0Mzg4ZDk2M2ExOTU3OGUyNGU5ZmIwMiIsInN1YiI6IjY1YTlhYzM3YzQzM2VhMDBjZTc0NDUzOCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.iRpR_AkId9BrMYlrEyQ6bsxJ-wrCsU9r3_g9odDj8rY"
         ]
         
         let request = NSMutableURLRequest(url: NSURL(string: "https://api.themoviedb.org/3/movie/\(movieID)?language=en-US")! as URL,
@@ -324,7 +324,7 @@ final class APIManager: Service{
         
         let headers = [
           "accept": "application/json",
-          "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI5MGQyN2YxOWRhZTcwZWNmNjZmZWFiODdkNDgxMTQ3NCIsInN1YiI6IjYzZGNmMGZhY2QyMDQ2MDBjMzBhMDFhNiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ._AyEn12c_-5RtWvgaGyXz59iuthPHeKsu2CUcK8aaic"
+          "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI4MjNmODIwZGY0Mzg4ZDk2M2ExOTU3OGUyNGU5ZmIwMiIsInN1YiI6IjY1YTlhYzM3YzQzM2VhMDBjZTc0NDUzOCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.iRpR_AkId9BrMYlrEyQ6bsxJ-wrCsU9r3_g9odDj8rY"
         ]
         
         let request = NSMutableURLRequest(url: NSURL(string: "https://api.themoviedb.org/3/movie/\(movieID)/credits?language=en-US")! as URL,
@@ -368,7 +368,7 @@ final class APIManager: Service{
         
         let headers = [
           "accept": "application/json",
-          "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI5MGQyN2YxOWRhZTcwZWNmNjZmZWFiODdkNDgxMTQ3NCIsInN1YiI6IjYzZGNmMGZhY2QyMDQ2MDBjMzBhMDFhNiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ._AyEn12c_-5RtWvgaGyXz59iuthPHeKsu2CUcK8aaic"
+          "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI4MjNmODIwZGY0Mzg4ZDk2M2ExOTU3OGUyNGU5ZmIwMiIsInN1YiI6IjY1YTlhYzM3YzQzM2VhMDBjZTc0NDUzOCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.iRpR_AkId9BrMYlrEyQ6bsxJ-wrCsU9r3_g9odDj8rY"
         ]
         
         let request = NSMutableURLRequest(url: NSURL(string: "https://api.themoviedb.org/3/movie/\(movieID)/videos?language=en-US")! as URL,
@@ -430,7 +430,6 @@ final class APIManager: Service{
                 return
             }
             
-
             completion(.success(data))
             print(data)
         }
