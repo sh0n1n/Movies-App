@@ -19,7 +19,7 @@ class TopRatedCollectionViewCell: UICollectionViewCell {
     }
     
     // MARK: - GUI VAriables
-    private lazy var movieImage: UIImageView = {
+    let movieImage: UIImageView = {
         let image = UIImageView()
         image.translatesAutoresizingMaskIntoConstraints = false
         image.clipsToBounds = true
@@ -27,7 +27,7 @@ class TopRatedCollectionViewCell: UICollectionViewCell {
         return image
     }()
     
-    private lazy var movieNameLabel: UILabel = {
+    let movieNameLabel: UILabel = {
        let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = .systemFont(ofSize: 16)
@@ -50,8 +50,6 @@ class TopRatedCollectionViewCell: UICollectionViewCell {
     }
     
     func movieOylesine(movie: Result){
-        
       //  print(movie)
-        
     }
 }

@@ -67,7 +67,6 @@ final class APIManager: MovieService {
         ]
         
         let url = URL(string: "https://api.themoviedb.org/3/search/movie?query=\(searchString)")!
-       // --url 'https://api.themoviedb.org/3/search/movie?query=transformers1' \
 
         var request = URLRequest(url: url)
         

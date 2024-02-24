@@ -18,7 +18,7 @@ class SearchCollectionViewCell: UICollectionViewCell {
     }
     
     //MARK: - GUI Variables
-    private lazy var movieImage: UIImageView = {
+    let movieImage: UIImageView = {
         let image = UIImageView()
         image.translatesAutoresizingMaskIntoConstraints = false
         image.clipsToBounds = true
@@ -26,8 +26,7 @@ class SearchCollectionViewCell: UICollectionViewCell {
         return image
     }()
     
-    
-    private lazy var movieNameLabel: UILabel = {
+    let movieNameLabel: UILabel = {
        let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = .boldSystemFont(ofSize: 16)
@@ -36,7 +35,7 @@ class SearchCollectionViewCell: UICollectionViewCell {
         return label
     }()
     
-    private lazy var movieDateLabel: UILabel = {
+    let movieDateLabel: UILabel = {
        let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = .systemFont(ofSize: 15)

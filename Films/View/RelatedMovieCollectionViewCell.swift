@@ -18,7 +18,7 @@ class RelatedMovieCollectionViewCell: UICollectionViewCell {
     }
     
     //MARK: - GUI VAriables
-    private lazy var movieImage: UIImageView = {
+    let movieImage: UIImageView = {
         let image = UIImageView()
         image.translatesAutoresizingMaskIntoConstraints = false
         image.layer.cornerRadius = 10
@@ -26,7 +26,7 @@ class RelatedMovieCollectionViewCell: UICollectionViewCell {
         return image
     }()
     
-    private lazy var characterLabel: UILabel = {
+    let characterLabel: UILabel = {
        let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = .systemFont(ofSize: 12.5)

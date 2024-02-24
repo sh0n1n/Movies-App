@@ -18,7 +18,7 @@ class CastCollectionViewCell: UICollectionViewCell {
     }
     
     //MARK: - GUI Variables
-    private lazy var characterImage: UIImageView = {
+    let characterImage: UIImageView = {
         let image = UIImageView()
         image.translatesAutoresizingMaskIntoConstraints = false
         image.layer.cornerRadius = 10
@@ -29,8 +29,7 @@ class CastCollectionViewCell: UICollectionViewCell {
         return image
     }()
     
-    
-     lazy var characterLabel: UILabel = {
+     let characterLabel: UILabel = {
        let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = .systemFont(ofSize: 12.5)
