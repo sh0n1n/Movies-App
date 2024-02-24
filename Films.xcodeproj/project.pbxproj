@@ -102,15 +102,12 @@
 				8DC0F0982B87F1B400E29FB2 /* Search */,
 				8DC0F0992B87F1C400E29FB2 /* Favorite */,
 				8DC0F09C2B88350000E29FB2 /* Movie */,
+				8DC0F0C62B89A2B800E29FB2 /* View */,
 				8DC0F0A92B883DD600E29FB2 /* Networking */,
 				8DC0F0B82B899ED100E29FB2 /* Extension */,
 				8DC0F0812B87EC7E00E29FB2 /* Assets.xcassets */,
 				8DC0F0832B87EC7E00E29FB2 /* LaunchScreen.storyboard */,
 				8DC0F0862B87EC7E00E29FB2 /* Info.plist */,
-				8DC0F0BE2B899FDD00E29FB2 /* TopRatedCollectionViewCell.swift */,
-				8DC0F0C02B89A09C00E29FB2 /* CastCollectionViewCell.swift */,
-				8DC0F0C22B89A17500E29FB2 /* RelatedMovieCollectionViewCell.swift */,
-				8DC0F0C42B89A1E000E29FB2 /* SearchCollectionViewCell.swift */,
 			);
 			path = Films;
 			sourceTree = "<group>";
@@ -209,6 +206,17 @@
 				8DC0F0B62B899DF800E29FB2 /* AnchorExtension.swift */,
 			);
 			path = Extension;
+			sourceTree = "<group>";
+		};
+		8DC0F0C62B89A2B800E29FB2 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				8DC0F0BE2B899FDD00E29FB2 /* TopRatedCollectionViewCell.swift */,
+				8DC0F0C02B89A09C00E29FB2 /* CastCollectionViewCell.swift */,
+				8DC0F0C22B89A17500E29FB2 /* RelatedMovieCollectionViewCell.swift */,
+				8DC0F0C42B89A1E000E29FB2 /* SearchCollectionViewCell.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
