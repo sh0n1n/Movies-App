@@ -243,7 +243,7 @@ class MovieDetailViewController: UIViewController, SingleMovieViewModelOutput, U
         stackView.spacing = 10
         
         let title = UILabel()
-        title.text = "Play"
+        title.text = "Watch Trailer"
         title.textColor = .white
       
         let image = UIImageView(image: UIImage(systemName: "play.fill"))
@@ -292,7 +292,7 @@ class MovieDetailViewController: UIViewController, SingleMovieViewModelOutput, U
     
     let castLabel: UILabel = {
      let label = UILabel()
-        label.text = "Movie Casts"
+        label.text = "Movie Cast"
         label.textColor = .white
         label.font = .boldSystemFont(ofSize: 15)
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -407,7 +407,7 @@ class MovieDetailViewController: UIViewController, SingleMovieViewModelOutput, U
         var minutes: Int = runTime % 60
         var hours: Int = runTime / 60
         
-        var playTime: String = "\(hours)h \(minutes)min · Movie HD"
+        var playTime: String = "\(hours)h \(minutes)min"
 
         var genreAll: String = ""
 
